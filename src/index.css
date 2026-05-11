@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", sans-serif;
+  --font-serif: "Playfair Display", serif;
+  --color-primary: #F5F1EB;
+  --color-petroleo: #243A4A;
+  --color-vinho: #8C5A4A;
+  --color-detalhes: #C8A98C;
+  --color-text-primary: #1F2A33;
+  --color-text-secondary: #5E6A73;
+  --color-linhas: rgba(36, 58, 74, 0.10);
+}
+
+@layer base {
+  body {
+    @apply bg-primary text-text-primary font-sans antialiased overflow-x-hidden selection:bg-petroleo selection:text-white;
+  }
+}
+
+@layer utilities {
+  .btn-glowing {
+    animation: neon-glow 2.5s ease-in-out infinite;
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), background-color 0.3s ease;
+    will-change: transform, box-shadow;
+  }
+  .btn-glowing:hover {
+    transform: scale(1.03);
+  }
+}
+
+@keyframes neon-glow {
+  0% {
+    box-shadow: 0 0 8px rgba(36, 58, 74, 0.3), 0 0 14px rgba(36, 58, 74, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 16px rgba(36, 58, 74, 0.6), 0 0 28px rgba(36, 58, 74, 0.3);
+  }
+  100% {
+    box-shadow: 0 0 8px rgba(36, 58, 74, 0.3), 0 0 14px rgba(36, 58, 74, 0.1);
+  }
+}

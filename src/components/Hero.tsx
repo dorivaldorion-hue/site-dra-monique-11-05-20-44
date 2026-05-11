@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import heroImage from '../assets/images/Design sem nome.svg';
+import heroImage from 'https://res.cloudinary.com/dezwlu6p2/image/upload/v1778542307/Design_sem_nome_wgqr9w.svg';
 
 export function Hero() {
   return (
